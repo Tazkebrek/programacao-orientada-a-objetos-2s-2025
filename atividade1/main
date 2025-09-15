@@ -1,0 +1,19 @@
+public class Main {
+    public static void main(String[] args) {
+        Computador pc = new Computador(16, 500, 4, 2.5f);
+        SistemaOperacional so = new SistemaOperacional(pc);
+
+        Programa p1 = new Programa(8, 100, 2, 10000);   // Deve executar com sucesso
+        Programa p2 = new Programa(32, 100, 2, 10000);  // Deve falhar por falta de RAM
+        Programa p3 = new Programa(8, 600, 2, 10000);   // Deve falhar por falta de SSD
+
+        System.out.println("---- Executando p1 ----");
+        so.executarPrograma(p1);
+
+        System.out.println("\n---- Executando p2 ----");
+        so.executarPrograma(p2);
+
+        System.out.println("\n---- Executando p3 ----");
+        so.executarPrograma(p3);
+    }
+}
